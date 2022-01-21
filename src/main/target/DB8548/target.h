@@ -20,116 +20,134 @@
 
 #pragma once
 
-#define TARGET_BOARD_IDENTIFIER "DOGE"
+#define TARGET_BOARD_IDENTIFIER "DBF4"
+#define USBD_PRODUCT_STRING     "DB8548"
+
+/*--------------LED----------------*/
+#define LED0_PIN                PG1
+#define LED1_PIN                PG2
+#define LED2_PIN                PG3
+#define LED3_PIN                PG4
+#define LED4_PIN                PG5
+#define LED5_PIN                PG6
+#define LED6_PIN                PG7
+#define LED7_PIN                PG8
+#define LED8_PIN                PF14
+#define LED9_PIN                PE11
+/*---------------------------------*/
+
+// Force two buttons to look at the single button so config reset on button works
+/*--------------BUTTON----------------*/
+#define USE_BUTTONS
+#define	BUTTON_A_PIN            PB2
+//#define BUTTON_A_PIN_INVERTED // Active high
+//#define	BUTTON_B_PIN            PA4
+//#define BUTTON_B_PIN_INVERTED // Active high
+/*---------------------------------*/
+
+/*------------BEEPER---------------*/
+#undef USE_BEEPER
+//#define BEEPER_PIN              PH15
+//#define BEEPER_INVERTED
+/*---------------------------------*/
+
+/*-----------USB-USARTs-------------*/
+#define USE_USART
+
+#define USE_USART6
+#define USART6_RX_PIN            PG9
+#define USART6_TX_PIN            PG14
+
+#define USE_VCP
+#define USE_USB_ID
 
 
 
+#define SERIAL_PORT_COUNT       9      // VCP, USART1/2/3/6, UART4/5/7/8
 
-// tqfp48 pin 34
-#define LED0_PIN                PA13
-// tqfp48 pin 37
-#define LED1_PIN                PA14
-// tqfp48 pin 38
-#define LED2_PIN                PA15
+/*---------------------------------*/
 
-#define USE_BEEPER
-#define BEEPER_PIN              PB2
-#define BEEPER_INVERTED
 
+// *************** Gyro & ACC **********************
 #define USE_SPI
-#define USE_SPI_DEVICE_1
-#define USE_SPI_DEVICE_2
+#define USE_SPI_DEVICE_5
+#define SPI5_SCK_PIN            PF7
+#define SPI5_MISO_PIN           PF8
+#define SPI5_MOSI_PIN           PF9
+#define SPI5_NSS_PIN            PF6
 
-// tqfp48 pin 39
-#define SPI1_SCK_PIN            PB3
-// tqfp48 pin 40
-#define SPI1_MISO_PIN           PB4
-// tqfp48 pin 41
-#define SPI1_MOSI_PIN           PB5
-// tqfp48 pin 3
-#define SPI1_NSS_PIN            PC14
+//#define USE_I2C
+//#define USE_I2C_DEVICE_3
+//#define I2C3_SCL                PH7
+//#define I2C3_SDA                PH8
+//#define I2C_DEVICE              (I2CDEV_1)
 
-// tqfp48 pin 26
-#define SPI2_SCK_PIN            PB13
-// tqfp48 pin 27
-#define SPI2_MISO_PIN           PB14
-// tqfp48 pin 28
-#define SPI2_MOSI_PIN           PB15
-// tqfp48 pin 25
-#define SPI2_NSS_PIN            PB12
+//#define USE_BARO
+//#define USE_BARO_DPS310
 
-// tqfp48 pin 3
-#define GYRO_1_CS_PIN           SPI1_NSS_PIN
-#define GYRO_1_SPI_INSTANCE     SPI1
-
-// tqfp48 pin 25
-#define BARO_CS_PIN             SPI2_NSS_PIN
-#define BARO_SPI_INSTANCE       SPI2
-
-#define USE_FLASHFS
-#define USE_FLASH_M25P16
-#define FLASH_SPI_SHARED
-#define FLASH_CS_PIN            PC15
-#define FLASH_SPI_INSTANCE      SPI2
+// MPU6500 interrupt
+//#define USE_EXTI
+//#define USE_GYRO_EXTI
+//#define GYRO_1_EXTI_PIN         PK1
+//#define USE_MPU_DATA_READY_SIGNAL
+//#define ENSURE_MPU_DATA_READY_IS_LOW
 
 #define USE_GYRO
 #define USE_GYRO_SPI_MPU6500
-#define USE_GYRO_SPI_MPU6000
-#define GYRO_1_ALIGN            CW270_DEG
+
+#define GYRO_1_CS_PIN           PF6
+#define GYRO_1_SPI_INSTANCE     SPI5
 
 #define USE_ACC
 #define USE_ACC_SPI_MPU6500
-#define USE_ACC_SPI_MPU6000
 
-#define USE_BARO
-#define USE_BARO_BMP280
-#define USE_BARO_SPI_BMP280
+//#define GYRO_1_ALIGN            CW0_DEG
 
-#define USE_VCP
-#define USE_UART1
-#define USE_UART2
-#define USE_UART3
-#define USE_SOFTSERIAL1
-#define USE_SOFTSERIAL2
+//#define GYRO_CONFIG_USE_GYRO_DEFAULT GYRO_CONFIG_USE_GYRO_1 
+//#define USE_GYRO_REGISTER_DUMP  // Adds gyroregisters command to cli to dump configured register values
 
-#define SERIAL_PORT_COUNT 6
+/*---------------------------------*/
 
-#define USE_ESCSERIAL
-#define ESCSERIAL_TIMER_TX_PIN  PA8 // (Hardware=0)
+#define USE_TIMER
+#define USE_MOTOR
 
-#define UART1_TX_PIN            PB6
-#define UART1_RX_PIN            PB7
-
-#define UART2_TX_PIN            PA2
-#define UART2_RX_PIN            PA3
-
-#define UART3_TX_PIN            PB10
-#define UART3_RX_PIN            PB11
-
-#define DEFAULT_VOLTAGE_METER_SOURCE VOLTAGE_METER_ADC
 #define USE_ADC
-#define ADC_INSTANCE            ADC2
-#define ADC24_DMA_REMAP // moves ADC2 DMA from DMA2ch1 to DMA2ch3.
-#define VBAT_ADC_PIN            PA4
-#define CURRENT_METER_ADC_PIN   PA5
+#define USE_ADC_INTERNAL
 
-// mpu_int definition in sensors/initialisation.c
-#define USE_EXTI
-#define USE_GYRO_EXTI
-#define GYRO_1_EXTI_PIN         PC13
-#define USE_MPU_DATA_READY_SIGNAL
-#define ENSURE_MPU_DATA_READY_IS_LOW
+#define ADC1_INSTANCE           ADC1
+#define VBAT_ADC_PIN            NONE
+#define DEFAULT_VOLTAGE_METER_SOURCE VOLTAGE_METER_ADC
 
-#define DEFAULT_RX_FEATURE      FEATURE_RX_PPM
+#define DEFAULT_RX_FEATURE      FEATURE_RX_SERIAL
+#define DEFAULT_FEATURES        FEATURE_TELEMETRY 
+#define SERIALRX_PROVIDER       SERIALRX_SBUS
+#define SERIALRX_UART           SERIAL_PORT_USART1
 
-// !!TODO - check the TARGET_IO_PORTs are correct
-#define TARGET_IO_PORTA         0xffff
-#define TARGET_IO_PORTB         0xffff
-#define TARGET_IO_PORTC         (BIT(13)|BIT(14)|BIT(15))
-#define TARGET_IO_PORTF         (BIT(0)|BIT(1)|BIT(3)|BIT(4))
+#define USE_DMA
 
-// timer definitions in drivers/timer.c
-// channel mapping in drivers/pwm_mapping.c
-// only 6 outputs available on hardware
-#define USABLE_TIMER_CHANNEL_COUNT 10
-#define USED_TIMERS             (TIM_N(1) | TIM_N(2) | TIM_N(3) | TIM_N(8) | TIM_N(16))
+// Thanks to DMAMUX, H7 does not have limitations on DMA stream assignments to devices (except for collisions among them).
+//#define UART1_TX_DMA_OPT        0
+//#define UART2_TX_DMA_OPT        1
+//#define UART3_TX_DMA_OPT        2
+//#define UART4_TX_DMA_OPT        3
+//#define UART5_TX_DMA_OPT        4
+//#define UART6_TX_DMA_OPT        5
+//#define UART7_TX_DMA_OPT        6
+//#define UART8_TX_DMA_OPT        7
+#define ADC1_DMA_OPT 8
+
+#define TARGET_IO_PORTA 0xffff
+#define TARGET_IO_PORTB 0xffff
+#define TARGET_IO_PORTC 0xffff
+#define TARGET_IO_PORTD 0xffff
+#define TARGET_IO_PORTE 0xffff
+#define TARGET_IO_PORTF 0xffff
+#define TARGET_IO_PORTG 0xffff
+#define TARGET_IO_PORTH 0xffff
+#define TARGET_IO_PORTI 0xffff
+#define TARGET_IO_PORTJ 0xffff
+#define TARGET_IO_PORTK 0xffff
+
+#define USABLE_TIMER_CHANNEL_COUNT 4
+
+#define USED_TIMERS  ( TIM_N(2) | TIM_N(4) )
