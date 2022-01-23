@@ -36,105 +36,63 @@
 #define LED9_PIN                PE11
 /*---------------------------------*/
 
-// Force two buttons to look at the single button so config reset on button works
 /*--------------BUTTON----------------*/
 #define USE_BUTTONS
 #define	BUTTON_A_PIN            PB2
-//#define BUTTON_A_PIN_INVERTED // Active high
-//#define	BUTTON_B_PIN            PA4
-//#define BUTTON_B_PIN_INVERTED // Active high
+#define BUTTON_A_PIN_INVERTED // Active high
 /*---------------------------------*/
 
 /*------------BEEPER---------------*/
 #undef USE_BEEPER
-//#define BEEPER_PIN              PH15
+//#define BEEPER_PIN              
 //#define BEEPER_INVERTED
 /*---------------------------------*/
 
 /*-----------USB-USARTs-------------*/
-#define USE_USART
-
-#define USE_USART6
-#define USART6_RX_PIN            PG9
-#define USART6_TX_PIN            PG14
-
 #define USE_VCP
-#define USE_USB_ID
 
+#define USE_UART1
+#define UART1_RX_PIN             PB7
+#define UART1_TX_PIN             PB6
 
+#define USE_UART6
+#define UART6_RX_PIN            PG9
+#define UART6_TX_PIN            PG14
 
 #define SERIAL_PORT_COUNT       9      // VCP, USART1/2/3/6, UART4/5/7/8
-
 /*---------------------------------*/
 
-
-// *************** Gyro & ACC **********************
+/*-------------SPIs----------------*/
 #define USE_SPI
 #define USE_SPI_DEVICE_5
 #define SPI5_SCK_PIN            PF7
 #define SPI5_MISO_PIN           PF8
 #define SPI5_MOSI_PIN           PF9
 #define SPI5_NSS_PIN            PF6
-
-//#define USE_I2C
-//#define USE_I2C_DEVICE_3
-//#define I2C3_SCL                PH7
-//#define I2C3_SDA                PH8
-//#define I2C_DEVICE              (I2CDEV_1)
-
-//#define USE_BARO
-//#define USE_BARO_DPS310
-
-// MPU6500 interrupt
-//#define USE_EXTI
-//#define USE_GYRO_EXTI
-//#define GYRO_1_EXTI_PIN         PK1
-//#define USE_MPU_DATA_READY_SIGNAL
-//#define ENSURE_MPU_DATA_READY_IS_LOW
-
-#define USE_GYRO
-#define USE_GYRO_SPI_MPU6500
-
-#define GYRO_1_CS_PIN           PF6
-#define GYRO_1_SPI_INSTANCE     SPI5
-
-#define USE_ACC
-#define USE_ACC_SPI_MPU6500
-
-//#define GYRO_1_ALIGN            CW0_DEG
-
-//#define GYRO_CONFIG_USE_GYRO_DEFAULT GYRO_CONFIG_USE_GYRO_1 
-//#define USE_GYRO_REGISTER_DUMP  // Adds gyroregisters command to cli to dump configured register values
-
 /*---------------------------------*/
 
-#define USE_TIMER
-#define USE_MOTOR
+/*------------SENSORS--------------*/
+// MPU6500 interrupt
+#define USE_EXTI
+#define GYRO_1_EXTI_PIN         PB5
 
-#define USE_ADC
-#define USE_ADC_INTERNAL
+#define USE_MPU_DATA_READY_SIGNAL
+#define ENSURE_MPU_DATA_READY_IS_LOW
 
-#define ADC1_INSTANCE           ADC1
-#define VBAT_ADC_PIN            NONE
-#define DEFAULT_VOLTAGE_METER_SOURCE VOLTAGE_METER_ADC
+#define USE_GYRO
+#define USE_ACC
 
-#define DEFAULT_RX_FEATURE      FEATURE_RX_SERIAL
-#define DEFAULT_FEATURES        FEATURE_TELEMETRY 
-#define SERIALRX_PROVIDER       SERIALRX_SBUS
-#define SERIALRX_UART           SERIAL_PORT_USART1
+#define USE_GYRO_SPI_MPU6500
+#define USE_ACC_SPI_MPU6500
 
-#define USE_DMA
+#define GYRO_1_CS_PIN           SPI5_NSS_PIN
+#define GYRO_1_SPI_INSTANCE     SPI5
+/*---------------------------------*/
 
-// Thanks to DMAMUX, H7 does not have limitations on DMA stream assignments to devices (except for collisions among them).
-//#define UART1_TX_DMA_OPT        0
-//#define UART2_TX_DMA_OPT        1
-//#define UART3_TX_DMA_OPT        2
-//#define UART4_TX_DMA_OPT        3
-//#define UART5_TX_DMA_OPT        4
-//#define UART6_TX_DMA_OPT        5
-//#define UART7_TX_DMA_OPT        6
-//#define UART8_TX_DMA_OPT        7
-#define ADC1_DMA_OPT 8
+/*--------DEFAULT VALUES-----------*/
+#define DEFAULT_RX_FEATURE       FEATURE_RX_SERIAL
+#define SERIALRX_PROVIDER        SERIALRX_SBUS
+#define SERIALRX_UART            SERIAL_PORT_USART1
 
 #define TARGET_IO_PORTA 0xffff
 #define TARGET_IO_PORTB 0xffff
@@ -145,9 +103,9 @@
 #define TARGET_IO_PORTG 0xffff
 #define TARGET_IO_PORTH 0xffff
 #define TARGET_IO_PORTI 0xffff
-#define TARGET_IO_PORTJ 0xffff
-#define TARGET_IO_PORTK 0xffff
+/*---------------------------------*/
 
+/*--------------TIMERS-------------*/
 #define USABLE_TIMER_CHANNEL_COUNT 4
-
-#define USED_TIMERS  ( TIM_N(2) | TIM_N(4) )
+#define USED_TIMERS  ( TIM_N(2) | TIM_N(3) | TIM_N(4) )
+/*---------------------------------*/
