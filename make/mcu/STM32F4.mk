@@ -49,6 +49,9 @@ MCU_FLASH_SIZE  := 512
 else ifeq ($(TARGET),$(filter $(TARGET), $(F446_TARGETS)))
 EXCLUDES        += stm32f4xx_fsmc.c
 MCU_FLASH_SIZE  := 512
+else ifeq ($(TARGET),$(filter $(TARGET), $(F427II_TARGETS)))
+EXCLUDES        += stm32f4xx_fsmc.c
+MCU_FLASH_SIZE  := 2048
 else
 MCU_FLASH_SIZE  := 1024
 endif
