@@ -49,6 +49,8 @@ mcuTypeId_e getMcuTypeId(void)
     return MCU_TYPE_F40X;
 #elif defined(STM32F411xE)
     return MCU_TYPE_F411;
+#elif defined(STM32F427xx)
+    return MCU_TYPE_F427;  
 #elif defined(STM32F446xx)
     return MCU_TYPE_F446;
 #elif defined(STM32F722xx)

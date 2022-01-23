@@ -1,8 +1,6 @@
 F427II_TARGETS += $(TARGET)
 
-HSE_VALUE   = 25000000
-
-FEATURES    += VCP ONBOARDFLASH SDCARD_SPI
+FEATURES    += VCP ONBOARDFLASH
 
 TARGET_SRC = \
             drivers/accgyro/accgyro_spi_mpu6500.c \
