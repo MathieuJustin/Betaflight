@@ -71,7 +71,7 @@
 #define SPI5_NSS_PIN            PF6
 /*---------------------------------*/
 
-/*------------SENSORS--------------*/
+/*---------SENSORS Gyro & ACC------*/
 // MPU6500 interrupt
 #define USE_EXTI
 #define GYRO_1_EXTI_PIN         PB5
