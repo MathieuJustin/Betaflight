@@ -95,7 +95,7 @@
 #define STM32F7
 #endif
 
-#elif defined(STM32F40_41xxx) || defined (STM32F411xE) || defined (STM32F446xx)
+#elif defined(STM32F40_41xxx) || defined (STM32F411xE) || defined (STM32F427xx) || defined (STM32F446xx)
 
 #include "stm32f4xx.h"
 

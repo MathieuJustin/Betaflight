@@ -297,6 +297,7 @@ static const char *mcuTypeNames[] = {
     "F303",
     "F40X",
     "F411",
+    "F427",
     "F446",
     "F722",
     "F745",
