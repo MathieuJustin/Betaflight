@@ -56,6 +56,8 @@ uint8_t eepromData[EEPROM_SIZE];
 #  define FLASH_PAGE_SIZE                 ((uint32_t)0x4000)
 # elif defined(STM32F427_437xx)
 #  define FLASH_PAGE_SIZE                 ((uint32_t)0x4000)
+# elif defined(STM32F427xx)
+#  define FLASH_PAGE_SIZE                 ((uint32_t)0x4000)
 # elif defined (STM32F446xx)
 #  define FLASH_PAGE_SIZE                 ((uint32_t)0x4000)
 // F7
