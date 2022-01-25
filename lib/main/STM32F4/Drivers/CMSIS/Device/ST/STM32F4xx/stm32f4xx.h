@@ -360,25 +360,6 @@ typedef enum IRQn
 #endif /* STM32F427_437xx */
     
 #if defined(STM32F427xx)
-  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                                         */
-  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt                         */
-  TAMP_STAMP_IRQn             = 2,      /*!< Tamper and TimeStamp interrupts through the EXTI line             */
-  RTC_WKUP_IRQn               = 3,      /*!< RTC Wakeup interrupt through the EXTI line                        */
-  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                                            */
-  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                              */
-  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                              */
-  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                              */
-  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                              */
-  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                              */
-  EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                              */
-  DMA1_Stream0_IRQn           = 11,     /*!< DMA1 Stream 0 global Interrupt                                    */
-  DMA1_Stream1_IRQn           = 12,     /*!< DMA1 Stream 1 global Interrupt                                    */
-  DMA1_Stream2_IRQn           = 13,     /*!< DMA1 Stream 2 global Interrupt                                    */
-  DMA1_Stream3_IRQn           = 14,     /*!< DMA1 Stream 3 global Interrupt                                    */
-  DMA1_Stream4_IRQn           = 15,     /*!< DMA1 Stream 4 global Interrupt                                    */
-  DMA1_Stream5_IRQn           = 16,     /*!< DMA1 Stream 5 global Interrupt                                    */
-  DMA1_Stream6_IRQn           = 17,     /*!< DMA1 Stream 6 global Interrupt                                    */
-  ADC_IRQn                    = 18,     /*!< ADC1, ADC2 and ADC3 global Interrupts                             */
   CAN1_TX_IRQn                = 19,     /*!< CAN1 TX Interrupt                                                 */
   CAN1_RX0_IRQn               = 20,     /*!< CAN1 RX0 Interrupt                                                */
   CAN1_RX1_IRQn               = 21,     /*!< CAN1 RX1 Interrupt                                                */
