@@ -875,8 +875,6 @@ uint32_t pllsai_m;
 
 #ifdef STM32F40_41xxx
     RCC_PLLI2SConfig(plli2s_n, PLLI2S_R);
-#elif defined(STM32F427xx)
-    RCC_PLLI2SConfig(plli2s_n, PLLI2S_R);
 #elif defined(STM32F411xE)
     RCC_PLLI2SConfig(plli2s_n, PLLI2S_R, pll_m);
 #elif defined(STM32F446xx)
