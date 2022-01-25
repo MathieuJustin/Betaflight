@@ -36,19 +36,19 @@
 #define LED9_PIN                PE11
 /*---------------------------------*/
 
-/*--------------BUTTON----------------*/
+/*--------------BUTTON-------------*/
 #define USE_BUTTONS
 #define	BUTTON_A_PIN            PB2
 #define BUTTON_A_PIN_INVERTED // Active high
 /*---------------------------------*/
 
-/*------------BEEPER---------------*/
+/*------------BEEPER Buzzer--------*/
 #undef USE_BEEPER
 //#define BEEPER_PIN              
 //#define BEEPER_INVERTED
 /*---------------------------------*/
 
-/*-----------USB-USARTs-------------*/
+/*-----------USB-USARTs------------*/
 #define USE_VCP
 
 #define USE_UART1
