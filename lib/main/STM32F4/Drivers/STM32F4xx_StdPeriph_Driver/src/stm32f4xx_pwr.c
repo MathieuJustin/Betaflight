@@ -79,7 +79,7 @@
 #define ODSWEN_BitNumber         0x11
 #define CR_ODSWEN_BB             (PERIPH_BB_BASE + (CR_OFFSET * 32) + (ODSWEN_BitNumber * 4))
 
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F427xx)
 /* Alias word address of MRUDS bit */
 #define MRUDS_BitNumber         0x0B
 #define CR_MRUDS_BB             (PERIPH_BB_BASE + (CR_OFFSET * 32) + (MRUDS_BitNumber * 4))
@@ -100,7 +100,7 @@
 #endif /* STM32F401xx || STM32F410xx || STM32F411xE || STM32F412xG  */
 
 /* --- CSR Register ---*/
-#if defined(STM32F40_41xxx) || defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F401xx) || defined(STM32F410xx) || defined(STM32F411xE) || defined(STM32F469_479xx)
+#if defined(STM32F40_41xxx) || defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F401xx) || defined(STM32F410xx) || defined(STM32F411xE) || defined(STM32F469_479xx) || defined(STM32F427xx)
 /* Alias word address of EWUP bit */
 #define CSR_OFFSET               (PWR_OFFSET + 0x04)
 #define EWUP_BitNumber           0x08
@@ -281,7 +281,7 @@ void PWR_PVDCmd(FunctionalState NewState)
 @endverbatim
   * @{
   */
-#if defined(STM32F40_41xxx) || defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F401xx) || defined(STM32F411xE)
+#if defined(STM32F40_41xxx) || defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F401xx) || defined(STM32F411xE) || defined(STM32F427xx)
 /**
   * @brief  Enables or disables the WakeUp Pin functionality.
   * @param  NewState: new state of the WakeUp Pin functionality.
@@ -539,7 +539,7 @@ void PWR_UnderDriveCmd(FunctionalState NewState)
   }
 }
 
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined (STM32F427xx)
 /**
   * @brief Enables or disables the Main Regulator under drive mode.
   *
@@ -1018,7 +1018,7 @@ void PWR_ClearFlag(uint32_t PWR_FLAG)
   /* Check the parameters */
   assert_param(IS_PWR_CLEAR_FLAG(PWR_FLAG));
   
-#if defined (STM32F427_437xx) || defined (STM32F429_439xx) || defined (STM32F446xx)
+#if defined (STM32F427_437xx) || defined (STM32F429_439xx) || defined (STM32F446xx) || defined (STM32F427xx)
   if (PWR_FLAG != PWR_FLAG_UDRDY)
   {
     PWR->CR |=  PWR_FLAG << 2;
