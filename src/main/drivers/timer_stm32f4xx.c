@@ -226,7 +226,7 @@ const timerHardware_t fullTimerHardware[FULL_TIMER_CHANNEL_COUNT] = {
 
 uint32_t timerClock(TIM_TypeDef *tim)
 {
-#if defined (STM32F411xE)
+#if defined (STM32F411xE) || defined (STM32F427xx)
     UNUSED(tim);
     return SystemCoreClock;
 #elif defined (STM32F40_41xxx) || defined (STM32F446xx)
@@ -235,8 +235,8 @@ uint32_t timerClock(TIM_TypeDef *tim)
     } else {
         return SystemCoreClock / 2;
     }
-//#else
-    //#error "No timer clock defined correctly for MCU"
+#else
+    #error "No timer clock defined correctly for MCU"
 #endif
 }
 #endif
