@@ -872,6 +872,7 @@ uint32_t pllsai_m;
 #define PLLI2S_R               2
 
     uint32_t plli2s_n = (PLLI2S_TARGET_FREQ_MHZ * PLLI2S_R) / pll_input;
+    UNUSED(plli2s_n);
 
 #ifdef STM32F40_41xxx
     RCC_PLLI2SConfig(plli2s_n, PLLI2S_R);
