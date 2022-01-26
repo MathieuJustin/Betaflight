@@ -33,14 +33,7 @@
 ******************************************************************************
 */
 
-/* Entry Point */
-ENTRY(Reset_Handler)
 
-/* Highest address of the user mode stack */
-_estack = ORIGIN(RAM) + LENGTH(RAM); /* end of "RAM" Ram type memory */
-
-_Min_Heap_Size = 0x200; /* required amount of heap */
-_Min_Stack_Size = 0x400; /* required amount of stack */
 /*
 0x08000000 to 0x0807FFFF  512K full flash,
 0x08000000 to 0x08003FFF   16K isr vector, startup code,
@@ -54,11 +47,11 @@ MEMORY
   FLASH (rx)        : ORIGIN = 0x08000000, LENGTH = 10K
   FLASH_CUSTOM_DEFAULTS (r) : ORIGIN = 0x08002800, LENGTH = 6K
   FLASH_CONFIG (r)  : ORIGIN = 0x08004000, LENGTH = 16K
-  FLASH1 (rx)       : ORIGIN = 0x08008000, LENGTH = 480K
+  FLASH1 (rx)       : ORIGIN = 0x08008000, LENGTH = 2016K
 
   SYSTEM_MEMORY (rx): ORIGIN = 0x1FFF0000, LENGTH = 29K
 
-  RAM (rwx)         : ORIGIN = 0x20000000, LENGTH = 128K
+  RAM (rwx)         : ORIGIN = 0x20000000, LENGTH = 192K
   MEMORY_B1 (rx)    : ORIGIN = 0x60000000, LENGTH = 0K
 }
 
