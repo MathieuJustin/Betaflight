@@ -235,8 +235,8 @@ uint32_t timerClock(TIM_TypeDef *tim)
     } else {
         return SystemCoreClock / 2;
     }
-#else
-    #error "No timer clock defined correctly for MCU"
+//#else
+    //#error "No timer clock defined correctly for MCU"
 #endif
 }
 #endif
