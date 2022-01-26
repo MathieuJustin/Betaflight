@@ -879,8 +879,8 @@ uint32_t pllsai_m;
     RCC_PLLI2SConfig(plli2s_n, PLLI2S_R, pll_m);
 #elif defined(STM32F446xx)
     RCC_PLLI2SConfig(pll_m, plli2s_n, 2, 2, PLLI2S_R); // M, N, P, Q, R
-#else
-#error Unsupported MCU
+//#else
+//#error Unsupported MCU
 #endif
 
     RCC_PLLI2SCmd(ENABLE);
