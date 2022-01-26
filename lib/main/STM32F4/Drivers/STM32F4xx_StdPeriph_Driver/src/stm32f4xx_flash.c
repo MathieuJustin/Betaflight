@@ -565,7 +565,7 @@ FLASH_Status FLASH_EraseAllSectors(uint8_t VoltageRange)
   if(status == FLASH_COMPLETE)
   {
     /* if the previous operation is completed, proceed to erase all sectors */
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F469_479xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F469_479xx) || defined(STM32F427xx)
     FLASH->CR &= CR_PSIZE_MASK;
     FLASH->CR |= tmp_psize;
     FLASH->CR |= (FLASH_CR_MER1 | FLASH_CR_MER2);
@@ -1249,7 +1249,7 @@ void FLASH_OB_UserConfig(uint8_t OB_IWDG, uint8_t OB_STOP, uint8_t OB_STDBY)
   
   if(status == FLASH_COMPLETE)
   { 
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F469_479xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F469_479xx) || defined(STM32F427xx)
     /* Mask OPTLOCK, OPTSTRT, BOR_LEV and BFB2 bits */
     optiontmp =  (uint8_t)((*(__IO uint8_t *)OPTCR_BYTE0_ADDRESS) & (uint8_t)0x1F);
 #endif /* STM32F427_437xx ||  STM32F429_439xx ||  STM32F469_479xx */
