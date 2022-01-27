@@ -872,16 +872,17 @@ uint32_t pllsai_m;
 #define PLLI2S_R               2
 
     uint32_t plli2s_n = (PLLI2S_TARGET_FREQ_MHZ * PLLI2S_R) / pll_input;
-    UNUSED(plli2s_n);
 
 #ifdef STM32F40_41xxx
     RCC_PLLI2SConfig(plli2s_n, PLLI2S_R);
 #elif defined(STM32F411xE)
     RCC_PLLI2SConfig(plli2s_n, PLLI2S_R, pll_m);
+#elif defined(STM32F427xx)
+    RCC_PLLI2SConfig(plli2s_n, 2, PLLI2S_R);
 #elif defined(STM32F446xx)
     RCC_PLLI2SConfig(pll_m, plli2s_n, 2, 2, PLLI2S_R); // M, N, P, Q, R
-//#else
-//#error Unsupported MCU
+#else
+  #error Unsupported MCU
 #endif
 
     RCC_PLLI2SCmd(ENABLE);
