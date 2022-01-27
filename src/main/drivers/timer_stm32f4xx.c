@@ -226,10 +226,10 @@ const timerHardware_t fullTimerHardware[FULL_TIMER_CHANNEL_COUNT] = {
 
 uint32_t timerClock(TIM_TypeDef *tim)
 {
-#if defined (STM32F411xE) || defined (STM32F427xx)
+#if defined (STM32F411xE) 
     UNUSED(tim);
     return SystemCoreClock;
-#elif defined (STM32F40_41xxx) || defined (STM32F446xx)
+#elif defined (STM32F40_41xxx) || defined (STM32F446xx) || defined (STM32F427xx)
     if (tim == TIM8 || tim == TIM1 || tim == TIM9 || tim == TIM10 || tim == TIM11) {
         return SystemCoreClock;
     } else {
