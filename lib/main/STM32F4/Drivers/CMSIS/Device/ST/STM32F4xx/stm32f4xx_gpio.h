@@ -393,7 +393,7 @@ typedef struct
 #define GPIO_AF_FSMC             ((uint8_t)0xC)  /* FSMC Alternate Function mapping                     */
 #endif /* STM32F40_41xxx || STM32F412xG */
 
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx) || defined(STM32F427xx)
 #define GPIO_AF_FMC              ((uint8_t)0xC)  /* FMC Alternate Function mapping                      */
 #endif /* STM32F427_437xx || STM32F429_439xx || STM32F446xx || STM32F469_479xx */
 
@@ -463,7 +463,7 @@ typedef struct
 #define IS_GPIO_AF(AF)   (((AF) < 10) || ((AF) == 15))
 #endif /* STM32F410xx */
 
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F427xx)
 #define IS_GPIO_AF(AF)   (((AF) == GPIO_AF_RTC_50Hz)  || ((AF) == GPIO_AF_TIM14)     || \
                           ((AF) == GPIO_AF_MCO)       || ((AF) == GPIO_AF_TAMPER)    || \
                           ((AF) == GPIO_AF_SWJ)       || ((AF) == GPIO_AF_TRACE)     || \

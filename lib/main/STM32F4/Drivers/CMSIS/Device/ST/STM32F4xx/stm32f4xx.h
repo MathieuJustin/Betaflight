@@ -66,7 +66,7 @@
   */
 
 #if !defined(STM32F40_41xxx) && !defined(STM32F427_437xx) && !defined(STM32F429_439xx) && !defined(STM32F401xx) && !defined(STM32F410xx) && \
-    !defined(STM32F411xE) && !defined(STM32F412xG) && !defined(STM32F446xx) && !defined(STM32F469_479xx)
+    !defined(STM32F411xE) && !defined(STM32F412xG) && !defined(STM32F446xx) && !defined(STM32F469_479xx) && !defined(STM32F427xx)
   /* #define STM32F40_41xxx */   /*!< STM32F405RG, STM32F405VG, STM32F405ZG, STM32F415RG, STM32F415VG, STM32F415ZG,
                                       STM32F407VG, STM32F407VE, STM32F407ZG, STM32F407ZE, STM32F407IG, STM32F407IE, 
                                       STM32F417VG, STM32F417VE, STM32F417ZG, STM32F417ZE, STM32F417IG and STM32F417IE Devices */
@@ -1377,7 +1377,7 @@ typedef struct
 } FSMC_Bank4_TypeDef; 
 #endif /* STM32F40_41xxx || STM32F412xG */
 
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx) || defined(STM32F427xx)
 /** 
   * @brief Flexible Memory Controller
   */
@@ -2029,7 +2029,7 @@ typedef struct
 #define FSMC_R_BASE           ((uint32_t)0xA0000000) /*!< FSMC registers base address                                                */
 #endif /* STM32F40_41xxx || STM32F412xG */
 
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx) || defined(STM32F427xx)
 #define FMC_R_BASE            ((uint32_t)0xA0000000) /*!< FMC registers base address                                                 */
 #endif /* STM32F427_437xx ||  STM32F429_439xx || STM32F446xx || STM32F469_479xx */
 
@@ -2199,7 +2199,7 @@ typedef struct
 #define FSMC_Bank4_R_BASE     (FSMC_R_BASE + 0x00A0)
 #endif /* STM32F40_41xxx || STM32F412xG */
 
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx) || defined(STM32F427xx)
 /*!< FMC Bankx registers base address */
 #define FMC_Bank1_R_BASE      (FMC_R_BASE + 0x0000)
 #define FMC_Bank1E_R_BASE     (FMC_R_BASE + 0x0104)
@@ -2351,7 +2351,7 @@ typedef struct
 #define FSMC_Bank4          ((FSMC_Bank4_TypeDef *) FSMC_Bank4_R_BASE)
 #endif /* STM32F40_41xxx || STM32F412xG */
 
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx) || defined(STM32F427xx)
 #define FMC_Bank1           ((FMC_Bank1_TypeDef *) FMC_Bank1_R_BASE)
 #define FMC_Bank1E          ((FMC_Bank1E_TypeDef *) FMC_Bank1E_R_BASE)
 #define FMC_Bank2           ((FMC_Bank2_TypeDef *) FMC_Bank2_R_BASE)
@@ -5838,7 +5838,7 @@ typedef struct
 #define  FSMC_ECCR3_ECC3                     ((uint32_t)0xFFFFFFFF)        /*!<ECC result */
 #endif /* STM32F40_41xxx || STM32F412xG */
 
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx) || defined(STM32F427xx)
 /******************************************************************************/
 /*                                                                            */
 /*                          Flexible Memory Controller                        */
@@ -9204,7 +9204,7 @@ typedef struct
 #define  RCC_AHB3RSTR_FSMCRST                ((uint32_t)0x00000001)
 #endif /* STM32F40_41xxx || defined(STM32F412xG) */
 
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx) || defined(STM32F427xx)
 #define  RCC_AHB3RSTR_FMCRST                ((uint32_t)0x00000001)
 #endif /* STM32F427_437xx ||  STM32F429_439xx || STM32F446xx || STM32F469_479xx */
 #if defined(STM32F412xG) || defined(STM32F446xx) || defined(STM32F469_479xx)
@@ -9317,7 +9317,7 @@ typedef struct
 #define  RCC_AHB3ENR_FSMCEN                  ((uint32_t)0x00000001)
 #endif /* STM32F40_41xxx || STM32F412xG */
 
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx) || defined(STM32F427xx)
 #define  RCC_AHB3ENR_FMCEN                  ((uint32_t)0x00000001)
 #endif /* STM32F427_437xx ||  STM32F429_439xx || STM32F446xx || STM32F469_479xx */
 
@@ -9432,7 +9432,7 @@ typedef struct
 #define  RCC_AHB3LPENR_FSMCLPEN              ((uint32_t)0x00000001)
 #endif /* STM32F40_41xxx || STM32F412xG */
 
-#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx)
+#if defined(STM32F427_437xx) || defined(STM32F429_439xx) || defined(STM32F446xx) || defined(STM32F469_479xx) || defined(STM32F427xx)
 #define  RCC_AHB3LPENR_FMCLPEN              ((uint32_t)0x00000001)
 #endif /* STM32F427_437xx ||  STM32F429_439xx  || STM32F446xx || STM32F469_479xx */
 #if defined(STM32F412xG) || defined(STM32F446xx) || defined(STM32F469_479xx)

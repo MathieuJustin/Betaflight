@@ -64,7 +64,7 @@
 #include "stm32f4xx_sai.h"
 #endif /* STM32F429_439xx || STM32F446xx || STM32F469_479xx */
 
-#if defined(STM32F427_437xx)
+#if defined(STM32F427_437xx) || defined(STM32F427xx)
 #include "stm32f4xx_cryp.h"
 #include "stm32f4xx_hash.h"
 #include "stm32f4xx_rng.h"
