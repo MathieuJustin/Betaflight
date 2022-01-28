@@ -430,7 +430,7 @@ typedef enum IRQn
   SPI6_IRQn                   = 86,     /*!< SPI6 global Interrupt                                             */
   SAI1_IRQn                   = 87,     /*!< SAI1 global Interrupt                                             */
   DMA2D_IRQn                  = 90      /*!< DMA2D global Interrupt                                            */
-  #endif /* STM32F427xx */
+#endif /* STM32F427xx */
 
 #if defined(STM32F429_439xx)
   CAN1_TX_IRQn                = 19,     /*!< CAN1 TX Interrupt                                                 */
