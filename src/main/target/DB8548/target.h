@@ -50,6 +50,8 @@
 
 /*-----------USB-USARTs------------*/
 #define USE_VCP
+#define USE_USB_ID
+#define USE_UART
 
 #define USE_UART1
 #define UART1_RX_PIN             PB7
@@ -106,6 +108,9 @@
 /*---------------------------------*/
 
 /*--------------TIMERS-------------*/
+#define USE_TIMER
+#define USE_MOTOR
+#define USE_DMA
 #define USABLE_TIMER_CHANNEL_COUNT 4
 #define USED_TIMERS  ( TIM_N(2) | TIM_N(3) | TIM_N(4) )
 /*---------------------------------*/
