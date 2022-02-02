@@ -19,6 +19,7 @@
  */
 
 #pragma once
+#define USE_TARGET_CONFIG
 
 #define TARGET_BOARD_IDENTIFIER "DBF4"
 #define USBD_PRODUCT_STRING     "DB8548"
@@ -108,9 +109,6 @@
 /*---------------------------------*/
 
 /*--------------TIMERS-------------*/
-#define USE_TIMER
-#define USE_MOTOR
-#define USE_DMA
 #define USABLE_TIMER_CHANNEL_COUNT 4
 #define USED_TIMERS  ( TIM_N(2) | TIM_N(3) | TIM_N(4) )
 /*---------------------------------*/
